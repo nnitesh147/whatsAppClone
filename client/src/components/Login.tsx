@@ -32,7 +32,7 @@ const Login = () => {
           email: email,
           photoUrl: profileImage,
         });
-        console.log(data);
+
         if (data?.message === "New User") {
           dispatch({ type: reducercases.Set_New_User, newUser: true });
           dispatch({

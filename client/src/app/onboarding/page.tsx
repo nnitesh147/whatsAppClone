@@ -5,12 +5,13 @@ import { logo } from "../../context/constants";
 import { useStateProvider } from "@/context/StateContext";
 import Input from "@/components/common/Input";
 import { useState } from "react";
+import Avatar from "@/components/common/Avatar";
 
 const page = () => {
   const [{ userInfo }, dispatch] = useStateProvider();
   const [name, setname] = useState(userInfo?.name ?? "");
   const [about, setabout] = useState("");
-  const [image, setimage] = useState("");
+  const [image, setimage] = useState("/default_avatar.png");
 
   return (
     <div className="bg-panel-header-background h-screen w-screen text-white flex flex-col items-center justify-center ">
@@ -41,13 +42,9 @@ const page = () => {
             label
             type="text"
           />
-          <Input
-            name="Display Image"
-            state={image}
-            setState={setimage}
-            label
-            type="file"
-          />
+        </div>
+        <div>
+          <Avatar type="xl" image={image} setimage={setimage} />
         </div>
       </div>
     </div>
