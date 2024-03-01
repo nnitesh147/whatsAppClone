@@ -3,7 +3,7 @@ import AuthHandler from "../handler/AuthHandler.js";
 
 const AuthController = {
   checkUser: handleResponse(async (req, res) => {
-    return await AuthHandler.checkUser(req);
+    return await AuthHandler.checkUser(req, res);
   }),
 };
 
